@@ -1,0 +1,10 @@
+*.exe
+*.class
+__pycache__/
+*.pyc
+*.session
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
