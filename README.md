@@ -1,4 +1,4 @@
-# TP2DPBO2425C1
+<img width="161" height="552" alt="DesainInheritance drawio (1)" src="https://github.com/user-attachments/assets/d173e1aa-a65f-46f6-8687-132558268b4e" /># TP2DPBO2425C1
 
 ## Janji
 Saya **Muhammad Rizkiana Pratama** dengan **NIM 2404421** mengerjakan **Tugas Praktikum 2** dalam mata kuliah **Desain dan Pemrograman Berorientasi Objek**.  
@@ -38,7 +38,7 @@ Program ini mengimplementasikan konsep **Multi-Level Inheritance** dengan tiga t
 ---
 
 ## Diagram
-<img width="161" height="552" alt="DesainInheritance drawio" src="https://github.com/user-attachments/assets/716229b6-1ca7-49dd-8dcf-a2f21589ca0b" />
+<img width="161" height="552" alt="DesainInheritance drawio (1)" src="https://github.com/user-attachments/assets/0aeb2b15-db7e-49d3-ae5e-a5f08fc8cb92" />
 
 
 ## Alur Program
