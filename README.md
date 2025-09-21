@@ -1,5 +1,3 @@
-<img width="161" height="552" alt="DesainInheritance drawio (1)" src="https://github.com/user-attachments/assets/d173e1aa-a65f-46f6-8687-132558268b4e" /># TP2DPBO2425C1
-
 ## Janji
 Saya **Muhammad Rizkiana Pratama** dengan **NIM 2404421** mengerjakan **Tugas Praktikum 2** dalam mata kuliah **Desain dan Pemrograman Berorientasi Objek**.  
 Untuk keberkahan-Nya maka saya **tidak melakukan kecurangan** seperti yang telah dispesifikasikan. Aamiin.  
