@@ -39,7 +39,8 @@ Program ini mengimplementasikan konsep **Multi-Level Inheritance** dengan tiga t
 ---
 
 ## Diagram
-<img width="161" height="552" alt="DesainInheritance drawio (1)" src="https://github.com/user-attachments/assets/0aeb2b15-db7e-49d3-ae5e-a5f08fc8cb92" />
+<img width="161" height="541" alt="DesainInheritance drawio (2)" src="https://github.com/user-attachments/assets/44f25654-c693-4756-8a85-9873e608693a" />
+
 
 
 ## Alur Program
