@@ -7,11 +7,11 @@ if (!isset($_SESSION['laptops'])) {
     $_SESSION['laptops'] = [];
 
     // Buat beberapa objek Laptop secara hardcode
-    $l1 = new Laptop("L001", "ASUS ROG Strix", 20000000, 10, "ASUS", 24, "G15", "Intel i7", 16, 512, "img/AsusRogStrix.jpg");
-    $l2 = new Laptop("L002", "MSI Katana", 18000000, 5, "MSI", 24, "GF66", "Intel i5", 8, 512, "img/MsiKatana.jpg");
-    $l3 = new Laptop("L003", "Lenovo Legion", 19000000, 7, "Lenovo", 24, "5 Pro", "AMD Ryzen 7", 16, 1024, "img/LenovoLegion.jpg");
-    $l4 = new Laptop("L004", "HP Omen", 18500000, 4, "HP", 24, "15-ek", "Intel i7", 16, 512, "img/HPOmen.jpg");
-    $l5 = new Laptop("L005", "Acer Predator", 21000000, 6, "Acer", 24, "Helios 300", "Intel i9", 32, 1024, "img/AcerPredator.jpg");
+    $l1 = new Laptop("L001", "ASUS ROG Strix", 20000000, 10, "img/AsusRogStrix.jpg", "ASUS", 24, "G15", "Intel i7", 16, 512);
+    $l2 = new Laptop("L002", "MSI Katana", 18000000, 5, "img/MsiKatana.jpg", "MSI", 24, "GF66", "Intel i5", 8, 512);
+    $l3 = new Laptop("L003", "Lenovo Legion", 19000000, 7, "img/LenovoLegion.jpg", "Lenovo", 24, "5 Pro", "AMD Ryzen 7", 16, 1024);
+    $l4 = new Laptop("L004", "HP Omen", 18500000, 4,  "img/HPOmen.jpg", "HP", 24, "15-ek", "Intel i7", 16, 512);
+    $l5 = new Laptop("L005", "Acer Predator", 21000000, 6, "img/AcerPredator.jpg", "Acer", 24, "Helios 300", "Intel i9", 32, 1024);
 
     // Masukkan array laptop ke session
     $_SESSION['laptops'] = [$l1, $l2, $l3, $l4, $l5];

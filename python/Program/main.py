@@ -29,43 +29,56 @@ def tampilkan_laptop():
         print("\nBelum ada data laptop.\n")
         return
 
-    # Hitung panjang maksimum tiap kolom
+    # Hitung panjang maksimum tiap kolom (dari header dan data)
     wId = max(len("ID"), max(len(l.get_id()) for l in daftar_laptop))
     wNama = max(len("Nama"), max(len(l.get_nama()) for l in daftar_laptop))
     wMerk = max(len("Merk"), max(len(l.get_merk()) for l in daftar_laptop))
     wModel = max(len("Model"), max(len(l.get_model()) for l in daftar_laptop))
     wProc = max(len("Prosesor"), max(len(l.get_tipe_prosesor()) for l in daftar_laptop))
-    wRAM = max(len("RAM"), max(len(str(l.get_kapasitas_ram())+"GB") for l in daftar_laptop))
-    wStorage = max(len("Storage"), max(len(str(l.get_storage())+"GB") for l in daftar_laptop))
+    wRAM = max(len("RAM(GB)"), max(len(str(l.get_kapasitas_ram())) for l in daftar_laptop))
+    wStorage = max(len("Storage(GB)"), max(len(str(l.get_storage())) for l in daftar_laptop))
     wHarga = max(len("Harga"), max(len(str(l.get_harga())) for l in daftar_laptop))
     wStok = max(len("Stok"), max(len(str(l.get_stok())) for l in daftar_laptop))
-    wGaransi = max(len("Garansi"), max(len(str(l.get_garansi())+"bln") for l in daftar_laptop))
+    wGaransi = max(len("Garansi"), max(len(str(l.get_garansi())) for l in daftar_laptop))
 
-    # Header
-    header = (
-        f"{'ID':<{wId}} {'Nama':<{wNama}} {'Merk':<{wMerk}} {'Model':<{wModel}} "
-        f"{'Prosesor':<{wProc}} {'RAM':<{wRAM}} {'Storage':<{wStorage}} "
-        f"{'Harga':<{wHarga}} {'Stok':<{wStok}} {'Garansi':<{wGaransi}}"
+    # Hitung total lebar tabel
+    total_width = (
+        (wId + 2) + (wNama + 2) + (wMerk + 2) + (wModel + 2) +
+        (wProc + 2) + (wRAM + 2) + (wStorage + 2) +
+        (wHarga + 2) + (wStok + 2) + (wGaransi + 2) +
+        (10 + 1)  # 10 kolom + ujung kanan
     )
-    print(header)
-    print("-" * len(header))
 
-    # Data isi tabel
+
+    # Cetak header
+    print("+" + "-" * (total_width - 2) + "+")
+    print(f"| {'ID':<{wId}} "
+          f"| {'Nama':<{wNama}} "
+          f"| {'Merk':<{wMerk}} "
+          f"| {'Model':<{wModel}} "
+          f"| {'Prosesor':<{wProc}} "
+          f"| {'RAM(GB)':<{wRAM}} "
+          f"| {'Storage(GB)':<{wStorage}} "
+          f"| {'Harga':<{wHarga}} "
+          f"| {'Stok':<{wStok}} "
+          f"| {'Garansi':<{wGaransi}} |")
+    print("+" + "-" * (total_width - 2) + "+")
+
+    # Cetak data
     for l in daftar_laptop:
-        print(
-            f"{l.get_id():<{wId}} "
-            f"{l.get_nama():<{wNama}} "
-            f"{l.get_merk():<{wMerk}} "
-            f"{l.get_model():<{wModel}} "
-            f"{l.get_tipe_prosesor():<{wProc}} "
-            f"{str(l.get_kapasitas_ram())+'GB':<{wRAM}} "
-            f"{str(l.get_storage())+'GB':<{wStorage}} "
-            f"{l.get_harga():<{wHarga}} "
-            f"{l.get_stok():<{wStok}} "
-            f"{str(l.get_garansi())+'bln':<{wGaransi}}"
-        )
+        print(f"| {l.get_id():<{wId}} "
+              f"| {l.get_nama():<{wNama}} "
+              f"| {l.get_merk():<{wMerk}} "
+              f"| {l.get_model():<{wModel}} "
+              f"| {l.get_tipe_prosesor():<{wProc}} "
+              f"| {l.get_kapasitas_ram():<{wRAM}} "
+              f"| {l.get_storage():<{wStorage}} "
+              f"| {l.get_harga():<{wHarga}} "
+              f"| {l.get_stok():<{wStok}} "
+              f"| {l.get_garansi():<{wGaransi}} |")
 
-    print("-" * len(header))
+    print("+" + "-" * (total_width - 2) + "+")
+
 
 
 

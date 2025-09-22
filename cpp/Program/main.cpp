@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring> // aku mau pake strlen
 #include <iomanip>
 #include "laptop.cpp"
 
@@ -55,60 +56,74 @@ void tampilkanLaptop() {
         return;
     }
 
-    // Hitung lebar kolom secara dinamis
-    int wId = 2, wNama = 4, wMerk = 4, wModel = 5, wProc = 8;
-    int wRAM = 3, wStorage = 7, wHarga = 5, wStok = 4, wGaransi = 7;
+    // Hitung lebar kolom langsung pakai strlen
+    int wId      = strlen("ID");
+    int wNama    = strlen("Nama");
+    int wMerk    = strlen("Merk");
+    int wModel   = strlen("Model");
+    int wProc    = strlen("Prosesor");
+    int wRAM     = strlen("RAM(GB)");
+    int wStorage = strlen("Storage(GB)");
+    int wHarga   = strlen("Harga");
+    int wStok    = strlen("Stok");
+    int wGaransi = strlen("Garansi");
 
-    // menghitung max dari setiap atribut supaya tabel dinamis
+    // loop untuk mendapatkan panjang maksimal dari tiap kolom
     for (auto &l : daftarLaptop) {
-        wId = max(wId, (int)l.getId().size());
-        wNama = max(wNama, (int)l.getNama().size());
-        wMerk = max(wMerk, (int)l.getMerk().size());
-        wModel = max(wModel, (int)l.getModel().size());
-        wProc = max(wProc, (int)l.getTipeProsesor().size());
-        wRAM = max(wRAM, (int)to_string(l.getKapasitasRAM()).size());
+        wId      = max(wId, (int)l.getId().size());
+        wNama    = max(wNama, (int)l.getNama().size());
+        wMerk    = max(wMerk, (int)l.getMerk().size());
+        wModel   = max(wModel, (int)l.getModel().size());
+        wProc    = max(wProc, (int)l.getTipeProsesor().size());
+        wRAM     = max(wRAM, (int)to_string(l.getKapasitasRAM()).size());
         wStorage = max(wStorage, (int)to_string(l.getStorage()).size());
-        wHarga = max(wHarga, (int)to_string(l.getHarga()).size());
-        wStok = max(wStok, (int)to_string(l.getStok()).size());
+        wHarga   = max(wHarga, (int)to_string(l.getHarga()).size());
+        wStok    = max(wStok, (int)to_string(l.getStok()).size());
         wGaransi = max(wGaransi, (int)to_string(l.getGaransi()).size());
     }
 
-    cout << string(wId + wNama + wMerk + wModel + wProc + wRAM + wStorage + wHarga + wStok + wGaransi + 50, '-') << endl;
-    // Mencetak Header tabel
+    // menghitung panjang tabel (10 kolom)
+    int totalWidth =
+        (wId + 2) + (wNama + 2) + (wMerk + 2) + (wModel + 2) +
+        (wProc + 2) + (wRAM + 2) + (wStorage + 2) +
+        (wHarga + 2) + (wStok + 2) + (wGaransi + 2) +
+        (10 + 1);
+
+    // Cetak header
+    cout << "+" << string(totalWidth - 2, '-') << "+\n";
     cout << left
-         << setw(wId + 2) << "ID"
-         << setw(wNama + 2) << "Nama"
-         << setw(wMerk + 2) << "Merk"
-         << setw(wModel + 2) << "Model"
-         << setw(wProc + 2) << "Prosesor"
-         << setw(wRAM + 6) << "RAM(GB)"
-         << setw(wStorage + 9) << "Storage(GB)"
-         << setw(wHarga + 6) << "Harga"
-         << setw(wStok + 4) << "Stok"
-         << setw(wGaransi + 8) << "Garansi" 
-         << endl;
+         << "| " << setw(wId)      << "ID"
+         << " | " << setw(wNama)   << "Nama"
+         << " | " << setw(wMerk)   << "Merk"
+         << " | " << setw(wModel)  << "Model"
+         << " | " << setw(wProc)   << "Prosesor"
+         << " | " << setw(wRAM)    << "RAM(GB)"
+         << " | " << setw(wStorage)<< "Storage(GB)"
+         << " | " << setw(wHarga)  << "Harga"
+         << " | " << setw(wStok)   << "Stok"
+         << " | " << setw(wGaransi)<< "Garansi"
+         << " |" << endl;
+    cout << "+" << string(totalWidth - 2, '-') << "+\n";
 
-    // Garis pemisah
-    cout << string(wId + wNama + wMerk + wModel + wProc + wRAM + wStorage + wHarga + wStok + wGaransi + 50, '-') << endl;
-
-    // Mencetak Isi tabel
+    // Cetak data
     for (auto &l : daftarLaptop) {
         cout << left
-             << setw(wId + 2) << l.getId()
-             << setw(wNama + 2) << l.getNama()
-             << setw(wMerk + 2) << l.getMerk()
-             << setw(wModel + 2) << l.getModel()
-             << setw(wProc + 2) << l.getTipeProsesor()
-             << setw(wRAM + 6) << l.getKapasitasRAM()
-             << setw(wStorage + 9) << l.getStorage()
-             << setw(wHarga + 6) << l.getHarga()
-             << setw(wStok + 4) << l.getStok()
-             << setw(wGaransi + 8) << l.getGaransi()
-             << endl;
+             << "| " << setw(wId)      << l.getId()
+             << " | " << setw(wNama)   << l.getNama()
+             << " | " << setw(wMerk)   << l.getMerk()
+             << " | " << setw(wModel)  << l.getModel()
+             << " | " << setw(wProc)   << l.getTipeProsesor()
+             << " | " << setw(wRAM)    << l.getKapasitasRAM()
+             << " | " << setw(wStorage)<< l.getStorage()
+             << " | " << setw(wHarga)  << l.getHarga()
+             << " | " << setw(wStok)   << l.getStok()
+             << " | " << setw(wGaransi)<< l.getGaransi()
+             << " |" << endl;
     }
-
-    cout << string(wId + wNama + wMerk + wModel + wProc + wRAM + wStorage + wHarga + wStok + wGaransi + 50, '-') << endl;
+    cout << "+" << string(totalWidth - 2, '-') << "+\n";
 }
+
+
 
 
 int main() {

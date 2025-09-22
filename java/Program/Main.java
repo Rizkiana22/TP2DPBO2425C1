@@ -51,11 +51,19 @@ public class Main {
             return;
         }
 
-        // Hitung lebar kolom dinamis
-        int wId = 2, wNama = 4, wMerk = 4, wModel = 5, wProc = 8;
-        int wRAM = 3, wStorage = 7, wHarga = 5, wStok = 4, wGaransi = 7;
+        // Hitung lebar tiap kolom dari header dulu
+        int wId = "ID".length();
+        int wNama = "Nama".length();
+        int wMerk = "Merk".length();
+        int wModel = "Model".length();
+        int wProc = "Prosesor".length();
+        int wRAM = "RAM(GB)".length();
+        int wStorage = "Storage(GB)".length();
+        int wHarga = "Harga".length();
+        int wStok = "Stok".length();
+        int wGaransi = "Garansi".length();
 
-        // menghitung max dari setiap atribut supaya tabel dinamis
+        // Sesuaikan lebar dengan isi data
         for (Laptop l : daftarLaptop) {
             wId = Math.max(wId, l.getId().length());
             wNama = Math.max(wNama, l.getNama().length());
@@ -69,43 +77,49 @@ public class Main {
             wGaransi = Math.max(wGaransi, String.valueOf(l.getGaransi()).length());
         }
 
-        String garis = "-".repeat(wId + wNama + wMerk + wModel + wProc +
-                                wRAM + wStorage + wHarga + wStok + wGaransi + 50);
-        System.out.println(garis);
+        // Hitung total lebar tabel
+        int totalWidth = (wId + 2) + (wNama + 2) + (wMerk + 2) + (wModel + 2) +
+                        (wProc + 2) + (wRAM + 2) + (wStorage + 2) +
+                        (wHarga + 2) + (wStok + 2) + (wGaransi + 2) +
+                        (10 + 1); // 10 kolom + 1 ujung kanan
 
-        // Mencetak Header tabel
-        String format = "%-" + (wId + 2) + "s"
-                    + "%-" + (wNama + 2) + "s"
-                    + "%-" + (wMerk + 2) + "s"
-                    + "%-" + (wModel + 2) + "s"
-                    + "%-" + (wProc + 2) + "s"
-                    + "%-" + (wRAM + 6) + "s"
-                    + "%-" + (wStorage + 9) + "s"
-                    + "%-" + (wHarga + 6) + "s"
-                    + "%-" + (wStok + 4) + "s"
-                    + "%-" + (wGaransi + 8) + "s\n";
+        // Fungsi garis
+        Runnable garis = () -> {
+            System.out.print("+");
+            for (int i = 0; i < totalWidth - 2; i++) System.out.print("-");
+            System.out.println("+");
+        };
 
-        System.out.printf(format, "ID", "Nama", "Merk", "Model", "Prosesor",
-                "RAM(GB)", "Storage(GB)", "Harga", "Stok", "Garansi");
-        System.out.println(garis);
+        // Cetak header
+        garis.run();
+        System.out.printf("| %-" + wId + "s ", "ID");
+        System.out.printf("| %-" + wNama + "s ", "Nama");
+        System.out.printf("| %-" + wMerk + "s ", "Merk");
+        System.out.printf("| %-" + wModel + "s ", "Model");
+        System.out.printf("| %-" + wProc + "s ", "Prosesor");
+        System.out.printf("| %-" + wRAM + "s ", "RAM(GB)");
+        System.out.printf("| %-" + wStorage + "s ", "Storage(GB)");
+        System.out.printf("| %-" + wHarga + "s ", "Harga");
+        System.out.printf("| %-" + wStok + "s ", "Stok");
+        System.out.printf("| %-" + wGaransi + "s |\n", "Garansi");
+        garis.run();
 
-        // Mencetak isi tabel
+        // Cetak data
         for (Laptop l : daftarLaptop) {
-            System.out.printf(format,
-                    l.getId(),
-                    l.getNama(),
-                    l.getMerk(),
-                    l.getModel(),
-                    l.getTipeProsesor(),
-                    l.getKapasitasRAM(),
-                    l.getStorage(),
-                    l.getHarga(),
-                    l.getStok(),
-                    l.getGaransi()
-            );
+            System.out.printf("| %-" + wId + "s ", l.getId());
+            System.out.printf("| %-" + wNama + "s ", l.getNama());
+            System.out.printf("| %-" + wMerk + "s ", l.getMerk());
+            System.out.printf("| %-" + wModel + "s ", l.getModel());
+            System.out.printf("| %-" + wProc + "s ", l.getTipeProsesor());
+            System.out.printf("| %-" + wRAM + "d ", l.getKapasitasRAM());
+            System.out.printf("| %-" + wStorage + "d ", l.getStorage());
+            System.out.printf("| %-" + wHarga + "d ", l.getHarga());
+            System.out.printf("| %-" + wStok + "d ", l.getStok());
+            System.out.printf("| %-" + wGaransi + "d |\n", l.getGaransi());
         }
-        System.out.println(garis);
+        garis.run();
     }
+
 
 
     public static void main(String[] args) {

@@ -9,9 +9,9 @@ class ProdukElektronik extends Produk {
     private $model; // model laptop
 
     // Constructor
-    public function __construct($id = "", $nama = "", $harga = 0, $stok = 0,
+    public function __construct($id = "", $nama = "", $harga = 0, $stok = 0, $gambar = "",
                                 $merk = "", $garansi = 0, $model = "") {
-        parent::__construct($id, $nama, $harga, $stok);
+        parent::__construct($id, $nama, $harga, $stok, $gambar);
         $this->merk = $merk;
         $this->garansi = $garansi;
         $this->model = $model;
