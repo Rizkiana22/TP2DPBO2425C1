@@ -71,15 +71,18 @@ Program ini mengimplementasikan konsep **Multi-Level Inheritance** dengan tiga t
 
 ## Dokumentasi
 1. **cpp**
-<img width="1273" height="877" alt="Screenshot 2025-09-19 191205" src="https://github.com/user-attachments/assets/a568917a-f3bf-4346-8e11-dd6b960fe3b6" />
+<img width="1437" height="676" alt="Screenshot 2025-09-22 191134" src="https://github.com/user-attachments/assets/006e29ef-8612-40b5-b0db-0b0da34eaec2" />
+
 
 
 2. **java**
-<img width="1269" height="837" alt="Screenshot 2025-09-19 191346" src="https://github.com/user-attachments/assets/99450a61-8fcb-46fa-9683-a58a2f627cd0" />
+<img width="1420" height="748" alt="Screenshot 2025-09-22 191356" src="https://github.com/user-attachments/assets/db5c3ffc-67cd-4bf2-9fc4-c9798b74e39c" />
+
 
 
 3. **python**
-<img width="891" height="909" alt="Screenshot 2025-09-19 191504" src="https://github.com/user-attachments/assets/b3e00026-3e7b-438f-8b9f-4bc8701d8c58" />
+<img width="1433" height="709" alt="Screenshot 2025-09-22 191527" src="https://github.com/user-attachments/assets/4f8eea33-5895-4d4c-b8b7-9c413496cfb9" />
+
 
 
 4. **php**
