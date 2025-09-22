@@ -56,7 +56,7 @@ Program ini mengimplementasikan konsep **Multi-Level Inheritance** dengan tiga t
 
 3. **Pengisian Data (Setter)**  
    Program menggunakan **setter** untuk mengisi data atribut:
-   - Atribut dasar (`id`, `nama`, `harga`, `stok`, `stok`)  
+   - Atribut dasar (`id`, `nama`, `harga`, `stok`, `gambar`)  
    - Atribut elektronik (`merk`, `garansi`, `model`)  
    - Atribut laptop (`tipeProsesor`, `kapasitasRAM`, `storage`)  
 
