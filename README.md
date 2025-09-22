@@ -18,7 +18,8 @@ Program ini mengimplementasikan konsep **Multi-Level Inheritance** dengan tiga t
    - `id` → kode unik produk  
    - `nama` → nama produk  
    - `harga` → harga produk  
-   - `stok` → jumlah stok yang tersedia  
+   - `stok` → jumlah stok yang tersedia
+   - `gambar`  
    Disertai dengan **getter** dan **setter** untuk mengakses dan mengubah nilai atribut.  
 
 2. **ProdukElektronik**  
